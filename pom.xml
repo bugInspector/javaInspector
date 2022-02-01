@@ -5,23 +5,23 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.bugInspector</groupId>
-    <artifactId>javaInspector</artifactId>
+    <artifactId>javainspector</artifactId>
     <packaging>pom</packaging>
-    <version>${project.version}</version>
+    <version>0.0.1</version>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
     <modules>
         <module>core</module>
         <module>car</module>
     </modules>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <project.version>0.0.1</project.version>
-    </properties>
-
-    <name>javaInspector</name>
+    <name>javainspector</name>
     <description>java inspector</description>
-    <url>https://github.com/bugInspector/javaInspector</url>
+    <url>https://github.com/bugInspector/javainspector</url>
     <licenses>
         <license>
             <name>The Apache License, Version 2.0</name>
@@ -30,9 +30,9 @@
     </licenses>
     <distributionManagement>
         <repository>
-            <id>ossrh</id>
-            <name>Central Repository OSSRH</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/bugInspector/javainspector</url>
         </repository>
     </distributionManagement>
 
