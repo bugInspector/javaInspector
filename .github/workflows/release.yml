@@ -5,9 +5,6 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-java@v2
@@ -18,18 +15,43 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
+      - name: Update project version in pom files
+        run: |
+          #branch_name=release-${RELEASE_VERSION}-change
+          git config --global user.name $GITHUB_USERNAME
+          git config --global user.email $GITHUB_USERNAME@users.noreply.github.com
+          #git checkout -b ${branch_name}
+
+          mvn -B versions:set -DnewVersion=${RELEASE_VERSION} -DgenerateBackupPoms=false
+
+          #find . -name 'pom.xml' | xargs git add
+          #git status
+          #git commit -m"Release ${RELEASE_VERSION}"
+
+          #origin_url=https://x-access-token:${GITHUB_TOKEN}@github.com/bugInspector/javainspector.git
+          #git remote set-url origin ${origin_url}
+          #git push origin ${branch_name} --force-with-lease
+          #git fetch origin --prune
+          #lst_commit=$(git rev-parse origin/main)
+          #release_commit=$(git rev-parse origin/${branch_name})
+          #git request-pull $lst_commit origin $release_commit
+
+        env:
+          GITHUB_USERNAME: ${{ github.actor }}
+          RELEASE_VERSION: ${{ github.event.release.tag_name }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Make a PR into repository
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Release ${{ github.event.release.tag_name }}
+          base: main
+          branch: release-${{ github.event.release.tag_name }}-change
+
       - name: Publish package
         run: |
           pwd
           mvn --batch-mode deploy
-          #mvn --batch-mode deploy --file pom.xml
-          #cd core
-          #pwd
-          #mvn --batch-mode deploy
-          #cd car
-          #pwd
-          #mvn --barch-mode deploy
-          #mvn --batch-mode -X -e deploy --file pom.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
