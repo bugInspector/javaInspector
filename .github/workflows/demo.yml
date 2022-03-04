@@ -18,6 +18,13 @@ jobs:
         run: mvn test -DbuildDirectory=./test-reports -DfailIfNoTests=false
           -Dtest=org.bugInspector.javaInspector.WindowTest -am
 
+      - name: show test results
+        run: |
+          pwd
+          ls -la
+          ls -la core
+          ls -la core/test-reports
+
       - name: Publish Test Report
         if: ${{ always() }}
         uses: scacap/action-surefire-report@v1
