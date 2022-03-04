@@ -30,4 +30,4 @@ jobs:
         uses: scacap/action-surefire-report@v1
         with:
           check_name: show-test-results
-          report_paths: 'core/test-reports/surefire-reports/TEST-TestSuite.xml'
+          report_paths: 'core/test-reports/surefire-reports/TEST-*.xml'
