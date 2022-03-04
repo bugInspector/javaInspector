@@ -12,6 +12,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <surefire.version>3.0.0-M5</surefire.version>
     </properties>
 
     <modules>
@@ -35,5 +36,14 @@
             <url>https://maven.pkg.github.com/bugInspector/javainspector</url>
         </repository>
     </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.4.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 </project>

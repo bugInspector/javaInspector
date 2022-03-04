@@ -15,4 +15,12 @@ jobs:
           distribution: 'zulu'
 
       - name: DemoTests
-        run: mvn -B package
+        run: mvn test -DbuildDirectory=./test-reports -DfailIfNoTests=false
+          -Dtest=org.bugInspector.javaInspector.WindowTest -am
+
+      - name: Publish Test Report
+        if: ${{ always() }}
+        uses: scacap/action-surefire-report@v1
+        with:
+          check_name: show-test-results
+          report_paths: '**/surefire-reports/TEST-TestSuite.xml'
