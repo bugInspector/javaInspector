@@ -16,7 +16,7 @@ jobs:
         run: mvn -B package --file pom.xml
 
       - name: Run Demo Tests
-        uses: ./.github/workflows/demo.yml
+        uses: ../.github/workflows/demo.yml
 
       - name: Update project version in pom files
         run: |
