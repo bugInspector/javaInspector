@@ -1,0 +1,5 @@
+-------------------------------------------------------------------------------
+Test set: org.bugInspector.javaInspector.WindowTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.361 s - in org.bugInspector.javaInspector.WindowTest
+org.bugInspector.javaInspector.WindowTest.testT  Time elapsed: 0.005 s
