@@ -18,29 +18,23 @@ jobs:
           ls -la
           mvn -B package --file pom.xml
 
-      - name: Update project version in pom files
+      - name: Check release correctness
         run: |
           pwd
-          git config --global user.name $GITHUB_USERNAME
-          git config --global user.email $GITHUB_USERNAME@users.noreply.github.com
-
-          mvn -B versions:set -DnewVersion=${RELEASE_VERSION} -DgenerateBackupPoms=false
+          project_version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          if [ $project_version != $RELEASE_VERSION ]; then
+            echo "Project version and Release version are not equal, please create tag using workflow specified for this"
+            exit 1
+          fi
 
         env:
-          GITHUB_USERNAME: ${{ github.actor }}
           RELEASE_VERSION: ${{ github.event.release.tag_name }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Make a PR into repository
-        uses: peter-evans/create-pull-request@v3
-        with:
-          commit-message: Release ${{ github.event.release.tag_name }}
-          base: main
-          branch: release-${{ github.event.release.tag_name }}-change
-
-      - name: Run Demo Tests
-        uses: ./.github/workflows/demo.yml
-        #uses: bugInspector/javainspector/.github/workflows/demo.yml@main
+      - name: Build with Maven
+        run: |
+          pwd
+          ls -la
+          mvn -B package --file pom.xml
 
       - name: Publish package
         run: |
