@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.bugInspector.javaInspector.WindowTest" time="0.262" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.bugInspector.javaInspector.WindowTest" time="0.272" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="file.encoding.pkg" value="sun.io"/>
@@ -15,7 +15,7 @@
     <property name="os.name" value="Linux"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/opt/hostedtoolcache/Java_Zulu_jdk/8.0.322-6/x64/jre/lib/amd64"/>
-    <property name="sun.java.command" value="/home/runner/work/javainspector/javainspector/core/null/surefire/surefirebooter574377559194434097.jar /home/runner/work/javainspector/javainspector/core/null/surefire 2022-03-15T11-59-18_456-jvmRun1 surefire7693225131471447632tmp surefire_06264700255107425923tmp"/>
+    <property name="sun.java.command" value="/home/runner/work/javainspector/javainspector/core/null/surefire/surefirebooter2300471852411410348.jar /home/runner/work/javainspector/javainspector/core/null/surefire 2022-03-15T11-59-30_803-jvmRun1 surefire3739177976920768907tmp surefire_01086543449346026192tmp"/>
     <property name="surefire.test.class.path" value="/home/runner/work/javainspector/javainspector/core/${buildDirectory}/test-classes:/home/runner/work/javainspector/javainspector/core/${buildDirectory}/classes:/home/runner/.m2/repository/org/testng/testng/7.4.0/testng-7.4.0.jar:/home/runner/.m2/repository/com/beust/jcommander/1.78/jcommander-1.78.jar:/home/runner/.m2/repository/org/webjars/jquery/3.5.1/jquery-3.5.1.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/runner"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/runner/work/javainspector/javainspector/core/null/surefire/surefirebooter574377559194434097.jar"/>
+    <property name="surefire.real.class.path" value="/home/runner/work/javainspector/javainspector/core/null/surefire/surefirebooter2300471852411410348.jar"/>
     <property name="sun.boot.class.path" value="/opt/hostedtoolcache/Java_Zulu_jdk/8.0.322-6/x64/jre/lib/resources.jar:/opt/hostedtoolcache/Java_Zulu_jdk/8.0.322-6/x64/jre/lib/rt.jar:/opt/hostedtoolcache/Java_Zulu_jdk/8.0.322-6/x64/jre/lib/sunrsasign.jar:/opt/hostedtoolcache/Java_Zulu_jdk/8.0.322-6/x64/jre/lib/jsse.jar:/opt/hostedtoolcache/Java_Zulu_jdk/8.0.322-6/x64/jre/lib/jce.jar:/opt/hostedtoolcache/Java_Zulu_jdk/8.0.322-6/x64/jre/lib/charsets.jar:/opt/hostedtoolcache/Java_Zulu_jdk/8.0.322-6/x64/jre/lib/jfr.jar:/opt/hostedtoolcache/Java_Zulu_jdk/8.0.322-6/x64/jre/lib/cat.jar:/opt/hostedtoolcache/Java_Zulu_jdk/8.0.322-6/x64/jre/classes"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="1.8.0_322-b06"/>
@@ -57,5 +57,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="testT" classname="org.bugInspector.javaInspector.WindowTest" time="0.003"/>
+  <testcase name="testT" classname="org.bugInspector.javaInspector.WindowTest" time="0.004"/>
 </testsuite>
