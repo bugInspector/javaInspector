@@ -27,6 +27,14 @@ jobs:
             exit 1
           fi
 
+          git fetch origin
+          commit_id=$(git rev-parse HEAD)
+          remote_branches_contain_commit=$(git branch -r --contains $commit_id | grep main)
+          if [[ ${remote_branches_contain_commit} != *"main"* ]]; then
+            echo "Main branch does not contain release commit"
+            exit 1
+          if
+
         env:
           RELEASE_VERSION: ${{ github.event.release.tag_name }}
 
