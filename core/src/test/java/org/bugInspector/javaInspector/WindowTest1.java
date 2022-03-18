@@ -2,10 +2,7 @@ package org.bugInspector.javaInspector;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
-public class WindowTest {
-
+public class WindowTest1 {
     @Test
     public void testT() {
         //throw new IllegalStateException();

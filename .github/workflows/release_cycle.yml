@@ -1,0 +1,15 @@
+name: Release Cycle
+on:
+  release:
+    types: [created]
+jobs:
+  demoTests:
+    uses: ./.github/workflows/demo.yml
+  demoTests1:
+    #if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
+    needs: [ demoTests ]
+    uses: ./.github/workflows/demo1.yml
+  release:
+    #if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
+    needs: [ demoTests, demoTests1 ]
+    uses: ./.github/workflows/release.yml
