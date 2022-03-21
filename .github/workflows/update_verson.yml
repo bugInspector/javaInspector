@@ -39,3 +39,4 @@ jobs:
         with:
           base: main
           branch: release-${{ github.event.inputs.tag }}-change
+          token: ${{ secrets.MAKE_PR }}

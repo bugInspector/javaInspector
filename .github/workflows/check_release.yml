@@ -2,7 +2,7 @@ name: Check release
 on:
   workflow_call:
 jobs:
-  publish:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
