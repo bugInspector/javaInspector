@@ -1,0 +1,19 @@
+name: Update release with results
+on:
+  workflow_call:
+    inputs:
+      text:
+        required: true
+        type: string
+jobs:
+  updateRelease:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update release with results
+        uses: tubone24/update_release@v1.3.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          is_append_body: true
+          body: ${{ inputs.text }}
