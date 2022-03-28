@@ -16,4 +16,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           is_append_body: true
-          body: ${{ inputs.text }}
+          body: ${{ inputs.text }}, [build url](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
