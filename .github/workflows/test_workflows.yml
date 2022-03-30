@@ -1,0 +1,35 @@
+name: test workflows
+on:
+  workflow_dispatch:
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '8'
+          distribution: 'zulu'
+
+      - name: CD CORE
+        run: |
+          echo =============
+          pwd
+          cd core
+          pwd
+
+      - name: CD CAR
+        run: |
+          echo =============
+          pwd
+          cd car
+          pwd
+
+      - name: Mvn Command in two lines
+        run: |
+          echo =============
+          pwd
+          mvn test -DbuildDirectory=./test-reports -DfailIfNoTests=false \
+            -Dtest=org.bugInspector.javaInspector.WindowTest -am
+

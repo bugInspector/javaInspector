@@ -39,4 +39,6 @@ jobs:
         with:
           base: main
           branch: release-${{ github.event.inputs.tag }}-change
+          title: Release ${{ github.event.inputs.tag }}
+          body: Updates project version
           token: ${{ secrets.MAKE_PR }}
