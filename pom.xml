@@ -29,6 +29,29 @@
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
+
+    <profiles>
+        <profile>
+            <id>github</id>
+            <distributionManagement>
+                <repository>
+                    <id>github</id>
+                    <name>GitHub Packages</name>
+                    <url>https://maven.pkg.github.com/Alliedium/ignite-migration-tool</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>central</id>
+            <distributionManagement>
+                <repository>
+                    <id>ossrh</id>
+                    <name>Central Repository OSSRH</name>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
     <distributionManagement>
         <repository>
             <id>github</id>
