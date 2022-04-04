@@ -1,4 +1,4 @@
-package io.github.bugInspector.javaInspector;
+package io.github.buginspector.javainspector;
 
 import org.testng.annotations.Test;
 
