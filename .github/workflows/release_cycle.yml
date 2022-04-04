@@ -14,6 +14,9 @@ jobs:
   release:
     needs: [ demoTests, demoTests1, checkRelease ]
     uses: ./.github/workflows/release.yml
+    secrets:
+      OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+      OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
   updateReleaseSuccess:
     needs: [ release ]
     uses: ./.github/workflows/update_release.yml
