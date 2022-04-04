@@ -31,5 +31,5 @@ jobs:
           echo =============
           pwd
           mvn test -DbuildDirectory=./test-reports -DfailIfNoTests=false \
-            -Dtest=io.github.bugInspector.javaInspector.WindowTest -am
+            -Dtest=io.github.buginspector.javainspector.WindowTest -am
 
