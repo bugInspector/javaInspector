@@ -7,7 +7,7 @@
     <groupId>io.github.buginspector</groupId>
     <artifactId>javainspector</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.22</version>
+    <version>0.0.23</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
