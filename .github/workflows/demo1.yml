@@ -23,7 +23,7 @@ jobs:
 
       - name: DemoTests
         run: mvn test -DbuildDirectory=./test-reports -DfailIfNoTests=false
-          -Dtest=io.github.buginspector.javainspector.WindowTest1 -am
+          -Dtest=io.github.buginspector.jin.javainspector.WindowTest1 -am
 
       - name: show test results
         run: |

@@ -1,4 +1,4 @@
-package io.github.buginspector.javainspector;
+package io.github.buginspector.jin.javainspector;
 
 public class Car {
     private final Window frontWindow;
